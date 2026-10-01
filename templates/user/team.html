@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block childpage %}
+<div class="row py-3 bg-color1">
+        <div class="col-sm-10 mx-auto">
+          <div class="row">
+            <div class="col-sm-12 fs-2 text-dark">Our <b class="text-color1">Faculty</b> </div>
+            <hr class="w-70"/>
+          </div>
+          <div class="row ">
+            
+           {% for x in tdata%}
+            <!--team box-->
+            <div class="col-sm-3 social">
+              <p class="bg-white  shadow-lg p-1">
+              <img src="/{{x.picture}}" class="img-thumbnail"/>
+              <b>{{x.name}}</b><br/>
+                <b>Designation :</b>{{x.designation}} <br/>
+               <a href="https://www.youtube.com/@Shubham18er" target="_blank"> <i class="fa-brands fa-youtube"></i></a>
+               <a href="https://whatsapp.com/dl/" target="_blank"> <i class="fa-brands fa-whatsapp"></i></a>
+               <a href="https://www.instagram.com/the_mathematic_1729?igsh=dmd3d2M2anFtYzg=" target="_blank"> <i class="fa-brands fa-instagram"></i></a>
+               <a href="https://www.linkedin.com/public-profile/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
+               
+
+
+              </p>
+            </div>
+            <!--team box end-->
+            {% endfor %}
+          </div>
+        </div>
+       </div>
+{% endblock%}

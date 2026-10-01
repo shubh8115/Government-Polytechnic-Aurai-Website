@@ -1,0 +1,185 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block childpage%}
+<!--Slider-->
+       <div class="row slider bg-color2">
+        <div class="col-sm-10 mx-auto">
+          <div class="row">
+            <div class="col-sm-7 text-light py-3">
+          
+          <div class="fs-3 bold">Welcome to <b class="text-color1">Government Polytechnic Aurai</b></div>
+          <hr class="w-70"/>
+          <div class="fs-5">Welcome to Babu Paras Nath Maurya Government Polytechnic Aurai, Ugapur, Bhadohi (GP Aurai). Established in 2010, we are an AICTE-approved institution under the Board of Technical Education Uttar Pradesh (BTEUP).
+
+Our college offers three branches:<b class="text-danger"> Computer Science and Engineering, Information Technology, and Electronics Engineering, with admissions through JEECUP.</b>
+
+At Babu Paras Nath Maurya Government Polytechnic Aurai , we focus on providing quality technical education supported by experienced faculty and modern facilities. We aim to equip our students with the skills and knowledge needed for their professional growth. Explore our website to learn more about our programs and resources.</div>
+          <br/>
+          <a href="/user/placements/" class="btn1 d-block text-center">Our Placement </a>
+            </div>
+            <div class="col-sm-5 py-5">
+    <div class="bg-light shadow-lg rounded p-3 position-relative" style="min-height:400px;">
+
+        <b class="badge bg-color1 rounded-pill fs-5 text-light position-absolute top-0 start-50 translate-middle">
+            Latest Notice <i class="fa-regular fa-bell"></i>
+        </b>
+
+        <!-- News -->
+
+        <!-- Header -->
+        
+
+        <!-- Notice Body -->
+        <div class="card-body" style="height:300px; overflow:hidden;">
+            <marquee direction="up"
+                     scrollamount="3"
+                     onmouseover="this.stop();"
+                     onmouseout="this.start();"
+                     style="height:100%;">
+
+                {% for x in ndata %}
+                <div class="mb-3">
+                    <p class="mb-1">
+                        📌 <strong>{{ x.title }}</strong>
+                    </p>
+
+                    <small class="text-muted">
+                        {{ x.posted_date }}
+                    </small>
+
+                   
+                  
+
+                    <hr>
+                </div>
+                {% empty %}
+                <p class="text-center">No Notice Available.</p>
+                {% endfor %}
+
+            </marquee>
+        </div>
+
+    </div>
+</div>
+        <!-- End News -->
+
+    </div>
+</div>
+          </div>
+        </div>
+       </div>
+      <!-- end Slider-->
+
+      <!--heading-->
+    <div class="row pt-2">
+      <div class="col-sm-10 mx-auto fs-3 ">
+        Our <b class="text-color1">Departments</b>
+         <a href="/user/branch/" class="badge bg-color2 text-decoration-none rounded-pill">Explore All branches
+          <i class="fa-award fa-pushed text-color1"></i>
+        </a>
+        <hr class="w-40"/>
+      </div>
+    </div>
+
+      <!-- end heading-->
+ <!--services-->
+       <div class="row services pb-5">
+        <div class="col-sm-10 mx-auto">
+          <div class="row">
+           {% for x in bdata%}
+            <div class="col-sm-3 p-1 rounded">
+              <div class="bg-light shadow-lg p-1 text-center position-relative">
+                <div class="badge py-2 bg-danger position-absolute top-0 start-50 translate-middle text-light">
+               {{x.name}}
+                </div> 
+                
+                <img src="/{{x.picture}}"  class="card-img-top"/>
+              <b class="pt-2">Number of Seats: {{x.no_of_seats}}</b> 
+              </div>
+            </div>
+            {% endfor %}
+
+
+          </div>
+        </div>
+       </div>
+      <!-- end services-->
+        <div class="row bg-color2 pt-5">
+      <div class="col-sm-10 mx-auto fs-3 text-light fw-bold">
+          Principal's <b class="text-color1">Message</b>
+        <hr class="w-30"/>
+      </div>
+    </div>
+
+      <!-- end heading-->
+<!-- Principle massage-->
+ <div class="row bg-color2 P-3">
+  <div class="col-sm-10 mx-auto">
+    <div class="row">
+    <div class="col-sm-4 p-2 ">
+      <img src="{% static 'images/shu3.jpeg'%}"  class="img-thumbnail img"/>
+    </div>
+    <div class="col-sm-8 text-justify fst-italic text-light py-1">
+      <b class="fs-5 text-danger">Er.Rajan Srivastava </b>
+      <p class=""><b class="text-warning">Qualification: </b> M.Tech</p>
+      <p>Welcome to our college, where education is the foundation of success and lifelong learning. We are committed to providing quality education in a supportive environment that encourages students to achieve academic excellence, develop strong values, and become responsible citizens.</p>
+      <p>Our dedicated faculty members strive to inspire curiosity, creativity, and critical thinking among students. Through modern teaching methods, practical learning, and continuous guidance, we prepare our students to face future challenges with confidence, knowledge, and determination.</p>
+      <p>We believe that education is not limited to classrooms. Our college promotes participation in cultural, sports, research, and social activities that help students build leadership qualities, teamwork, discipline, and a strong sense of social responsibility.</p>
+      <p>I warmly welcome every student to become a part of our academic family. With hard work, integrity, and dedication, you can achieve your goals and contribute positively to society. I wish you a successful, enriching, and memorable educational journey.
+</p>
+    </div>
+  </div>
+
+  </div>
+
+ </div>
+<!--  end Principle massage-->
+   <!--heading-->
+    <div class="row pt-5">
+      <div class="col-sm-10 mx-auto fs-3 ">
+        Our <b class="text-color1">Latest Placement</b>
+        <a href="/user/placements" class="badge bg-color2 text-decoration-none rounded-pill">Explore All Placement
+          <i class="fa-award fa-pushed text-color1"></i>
+        </a>
+        <hr class="w-40"/>
+        
+      </div>
+    </div>
+
+      <!-- end heading-->
+
+      <div class="row">
+        <div class="col-sm-10 mx-auto pb-5">
+          <div class="row ">
+            {% for x in pdata %}
+            <!--team box-->
+            <div class="col-sm-3 social ">
+              <p class="bg-white shadow-lg p-3 img">
+              <img src="/{{x.picture}}" class="img-thumbnail"/>
+              <b class="fs-5">{{x.name}}</b><br/>
+                  <b>Designation :</b> {{x.designation}}<br/>
+                  <b>Company : </b>{{x.company}} <br/>
+                  <b>Session : </b>{{x.psession}}<br/>
+               <a href="https://www.youtube.com/@Shubham18er" target="_blank"> <i class="fa-brands fa-youtube"></i></a>
+               <a href="https://whatsapp.com/dl/" target="_blank"> <i class="fa-brands fa-whatsapp"></i></a>
+               <a href="https://www.instagram.com/the_mathematic_1729?igsh=dmd3d2M2anFtYzg=" target="_blank"> <i class="fa-brands fa-instagram"></i></a>
+               <a href="https://www.linkedin.com/public-profile/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
+               
+              </p>
+            </div>
+            <!--team box end-->
+            {% endfor%}
+          </div>
+        </div>
+      </div>
+
+      
+
+
+{% endblock%}
+
+
+
+
+
+<!--rzp_test_TGSmFBnftsEisc-->

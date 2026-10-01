@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block childpage %}
+
+
+
+<!--heading-->
+    <div class="row pt-2">
+      <div class="col-sm-10 mx-auto fs-3 ">
+         About <b class="text-color1">College</b>
+        <hr class="w-40"/>
+      <div class="row">
+         <div class="col-sm-4 p-3">
+        <img src="{% static 'images/college.jpg'%}" class="img-thumbnail img  "/>
+       </div>
+       <div class="col-sm-8 p-3 fs-5 fst-italic">
+       <p> Welcome to <b>Government Polytechnic Aurai </b>, a center of academic excellence, innovation, and personal growth. Since our establishment, we have been committed to providing quality education that empowers students with the knowledge, skills, and values needed to succeed in a rapidly changing world.
+        </p>
+       <p>Our mission is to inspire students to become confident,
+                responsible, and skilled professionals who can contribute
+                positively to society. We encourage research, creativity,
+                leadership, and lifelong learning.</p>
+       
+        <div class="stats-container">
+
+    <div class="stat-box">
+        <h2>15+</h2>
+        <p>Years of Excellence</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>1000+</h2>
+        <p>Students</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>30+</h2>
+        <p>Faculty Members</p>
+    </div>
+
+    
+
+</div>
+
+       </div>
+
+      </div>
+
+      </div>
+    </div>
+
+      <!-- end heading-->
+
+
+{% endblock%}

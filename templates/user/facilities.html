@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<div class="row pt-2">
+      <div class="col-sm-10 mx-auto fs-3 ">
+        Our <b class="text-color1">Facilities</b>
+        <hr class="w-40"/>
+      </div>
+    </div>
+
+      <!-- end heading-->
+ <!--services-->
+       <div class="row services pb-5">
+        <div class="col-sm-10 mx-auto">
+          <div class="row">
+           {% for x in fdata%}
+            <div class="col-sm-4 p-1 rounded ">
+              <div class="bg-light shadow-lg p-1 size text-center position-relative">
+                <div class="badge py-2 bg-danger position-absolute top-0 start-50 translate-middle text-light">
+               {{x.title}}
+                </div> 
+                
+                <img src="/{{x.picture}}"  class="card-img-top"/>
+              <b class="pt-2">{{x.description}}</b> 
+              </div>
+            </div>
+            {% endfor %}
+
+
+          </div>
+        </div>
+       </div>
+{% endblock %}
